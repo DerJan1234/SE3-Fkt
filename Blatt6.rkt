@@ -16,19 +16,19 @@
 ;einer anderen Funktion aufgerufen wird, die von endstueck verwendet wird, ist endstueck nicht
 ;indiekt rekursiv.
 ;Es gilt also: linear, nicht baumrekursiv, nicht geschachtelt, direkt, nicht indirekt
-;merge ist keine lineare Rekursion, weil jeder Aufruf von merge dafr sorgt, dass merge zwei weitere
-;Male aufgerufen wird. Da merge sich bei jedem Aufruf zweimal selbst aufruft, ist merge eine 
+;merge ist eine lineare Rekursion, weil jeder Aufruf von merge dafuer sorgt, dass merge (aufgrund des if) nur
+; ein Mal aufgerufen wird. Da merge sich daher bei jedem Aufruf nur einmal selbst aufruft, ist merge keine 
 ;Baumrekursion. Da nicht merge in einem Auruf von merge vorkommt, ist merge keine geschachtelte Rekursion.
 ;merge ist eine direkte Rekursion, weil merge sich selbst auruft. Da merge nicht von
 ;einer anderen Funktion aufgerufen wird, die von merge verwendet wird, ist merge nicht
 ;indiekt rekursiv.
-;Also gilt: nicht linear, Baumrekursion, nicht geschachtelt, direkt und nicht indirekt
+;Also gilt: linear, keine Baumrekursion, nicht geschachtelt, direkt und nicht indirekt
 ;merge-sort ist keine lineare Rekursion, weil merge-sort merge aufruft und dann von merge zweimal 
 ;benutzt wird. Es folgen also auf jeden Aufruf von merge-sort zwei weitere Aufrufe von merge-sort.
 ;Es handelt sich also um eine Baumrekursion. Die Rekursion ist geschachtelt, weil merge die Funktion 
-;merge-sort auruft und ist aus diesem Grund auch indirekt. Da merge-sort sich nicht selbst aufruft,
+;merge-sort aufruft und ist aus diesem Grund auch indirekt. Da merge-sort sich nicht selbst aufruft,
 ;ist merge-sort nicht direkt.
-;Es gilt also nicht linear, Baumrekursion, geschachtelt, nicht direkt und indrekt.
+;Es gilt also nicht linear, Baumrekursion, geschachtelt, nicht direkt und indirekt.
 
 ;Aufgabe 2:
 (define baum1 (above/align
